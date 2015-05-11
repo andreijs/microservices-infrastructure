@@ -8,6 +8,7 @@
   tags:
     - docker
 
+# Moved in to packer script
 - name: install docker
   sudo: yes
   yum:
@@ -28,6 +29,7 @@
   tags:
     - docker
 
+# Moved in to packer script
 - name: enable docker
   sudo: yes
   service:
