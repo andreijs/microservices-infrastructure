@@ -1,5 +1,5 @@
 ---
-# default is etc/utc in build 20141129 [http://cloud.centos.org/centos/7/images/]
+# Moved in to packer script
 - name: set timezone to etc/utc
   sudo: yes
   file:
@@ -8,7 +8,7 @@
     state: link
     force: yes
 
-# add hosts to /etc/hosts
+# Add hosts to /etc/hosts
 - name: configure hosts file
   sudo: yes
   lineinfile:
@@ -19,12 +19,14 @@
   when: hostvars[item].ansible_default_ipv4.address is defined
   with_items: groups['all']
 
+# Moved in to packer script
 - name: install httpd-tools
   sudo: yes
   yum:
     name: httpd-tools
     state: present
 
+# Moved in to packer script
 - name: disable firewalld
   service: 
     name: firewalld 
