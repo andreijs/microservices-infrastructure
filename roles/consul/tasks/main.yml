@@ -1,4 +1,5 @@
 ---
+# Moved in to packer script
 - name: install consul
   sudo: yes
   yum:
@@ -7,6 +8,7 @@
   tags: 
     - consul
 
+# Moved in to packer script
 - name: install consul-ui
   sudo: yes
   yum:
