@@ -15,7 +15,7 @@ EOF
 
 yum clean all
 yum makecache -y
-yum install -y mesos
-yum upgrade -y mesos
+yum install -y mesos cyrus-sasl-md5
+yum upgrade -y mesos cyrus-sasl-md5
 
 # EOF
