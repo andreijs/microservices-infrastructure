@@ -1,4 +1,5 @@
 ---
+# Moved in to packer script
 - name: install consul-template
   sudo: yes
   yum:
