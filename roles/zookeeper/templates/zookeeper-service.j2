@@ -9,8 +9,10 @@ Restart=on-failure
 RestartSec=20
 TimeoutStartSec=20m
 
+# Moved in to packer script
 ExecStartPre=-/usr/bin/docker rm {{ zookeeper_container_name }}
 ExecStartPre=-/usr/bin/docker pull {{ zookeeper_image }}:{{ zookeeper_image_tag }}
+
 ExecStartPre=/bin/bash -c ' \
     /usr/bin/docker inspect -f "\{\{.Created\}\}" {{ zookeeper_data_volume }} || \
     /usr/bin/docker run \
